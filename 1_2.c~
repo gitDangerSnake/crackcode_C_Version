@@ -1,0 +1,44 @@
+/*
+	write code to reverse a C-Style string.
+	C-Style means that "abcd" is represented as five characters, including the null character.
+*/
+#include<stdio.h>
+#include<string.h>
+
+/*
+	前后交换顺序即可，i<len/2
+*/
+void swap(char* a,char *b)
+{
+	*a = *a ^ *b;
+	*b = *a ^ *b;
+	*a = *a ^ *b;
+}
+
+
+void reverse(char str[]){
+	int len = strlen(str);
+	int i=0,j=len-1;
+	while(i<j)
+	{		
+		swap(&str[i],&str[j]);
+		i++;
+		j--;
+	}
+	
+}
+
+int main()
+{
+	char s[] = "abcdefgtjt";
+	
+	reverse(s);
+	printf("%s\n",s);
+	
+	char* c ;
+	char a = 'a';
+	c = &a;
+	putchar(*c);
+	
+}
+
